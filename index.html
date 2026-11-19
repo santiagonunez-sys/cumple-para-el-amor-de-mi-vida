@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Feliz Cumpleaños amor de mi vida! 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(160deg, #ffe4ef, #ffd1e3, #ffc2d9, #ffe8f2);
+    color: #8a2b52;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .pantalla {
+    display: none;
+    animation: entrar .45s ease both;
+  }
+
+  .pantalla.activa {
+    display: block;
+  }
+
+  @keyframes entrar {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .deco {
+    position: fixed;
+    font-size: 25px;
+    opacity: .6;
+    animation: flotar 7s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .deco:nth-child(1) { top: 8%; left: 7%; }
+  .deco:nth-child(2) { top: 16%; right: 9%; animation-delay: 1s; }
+  .deco:nth-child(3) { top: 45%; left: 5%; animation-delay: 2s; }
+  .deco:nth-child(4) { top: 60%; right: 7%; animation-delay: 1.5s; }
+  .deco:nth-child(5) { bottom: 15%; left: 10%; animation-delay: 2.5s; }
+  .deco:nth-child(6) { bottom: 22%; right: 11%; animation-delay: 3s; }
+
+  @keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 55px 20px 40px;
+    background: radial-gradient(circle at top, #fff0f6, #ffd6e7);
+    border-bottom: 4px dotted #ff8fb8;
+  }
+
+  .titulo {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: #d6336c;
+    text-shadow: 2px 3px 0 #fff, 4px 5px 12px rgba(214, 51, 108, .25);
+    animation: brillar 2.5s ease-in-out infinite;
+  }
+
+  @keyframes brillar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+
+  .subtitulo {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #a63b66;
+  }
+
+  .nombre {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #fff;
+    border: 3px solid #ff8fb8;
+    color: #d6336c;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(255, 143, 184, .35);
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 25px 16px 55px;
+  }
+
+  .tarjeta {
+    background: rgba(255, 255, 255, .88);
+    border: 3px solid #ffb3cf;
+    border-radius: 26px;
+    padding: 22px 18px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 24px rgba(214, 51, 108, .15);
+  }
+
+  h2 {
+    font-family: 'Pacifico', cursive;
+    color: #d6336c;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 15.5px;
+  }
+
+  .corazones {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-top: 10px;
+  }
+
+  .botones-recuerdos {
+    display: grid;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .boton-recuerdo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 18px;
+    border: 3px solid #ff8fb8;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #fff, #ffeaf3);
+    color: #b03060;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(255, 143, 184, .3);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .boton-recuerdo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 143, 184, .45);
+  }
+
+  .boton-recuerdo:active {
+    transform: scale(.97);
+  }
+
+  .boton-recuerdo span {
+    font-size: 24px;
+  }
+
+  .boton-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #fff;
+    border: 3px solid #ff8fb8;
+    color: #d6336c;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(255, 143, 184, .3);
+    transition: transform .2s ease;
+  }
+
+  .boton-volver:active {
+    transform: scale(.95);
+  }
+
+  .recuerdo-grande {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+
+  .boton-mensaje {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff6fa5, #ff9ec4);
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(255, 111, 165, .45);
+    transition: transform .2s ease;
+  }
+
+  .boton-mensaje:active {
+    transform: scale(.96);
+  }
+
+  .mensaje-secreto {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 18px;
+    background: #fff0f6;
+    border: 2px dashed #ff8fb8;
+    color: #a63b66;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 25px 15px 40px;
+    color: #a63b66;
+    font-weight: 600;
+  }
+
+  @media (max-width: 380px) {
+    .titulo { font-size: 33px; }
+    h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="deco">🎀</div>
+  <div class="deco">💗</div>
+  <div class="deco">🌸</div>
+  <div class="deco">✨</div>
+  <div class="deco">🩷</div>
+  <div class="deco">🌷</div>
+
+  <!-- PÁGINA PRINCIPAL -->
+  <div id="inicio" class="pantalla activa">
+    <header>
+      <div style="font-size:46px;">🎂</div>
+       <img src="conocidos.jpg" alt="Foto bonita" class="foto-recuerdo">
+      <h1 class="titulo">¡Feliz Cumpleaños amor de mi vida!</h1>
+      <p class="subtitulo">Hoy celebramos a la persona más especial para mí 💖</p>
+      <div class="nombre">🎀 Para la persona que mas amo 🎀</div>
+    </header>
+
+    <main>
+      <section class="tarjeta">
+        <h2>Un día hermoso</h2>
+        <p>
+          Hoy es tu día, mi amor. Espero que lo pases increíble que recibas mucho cariño y recibas mucho pastel o macha porque casi no te gusta el pastel pero el machta si jeje
+          y que recuerdes lo especial, bonita e importante que eres para mí y lo mucho que te amo con todo mi coyashon 
+        </p>
+        <div class="corazones">💗 💗 💗</div>
+      </section>
+
+      <section class="tarjeta">
+        <h2>Nuestros recuerdos</h2>
+        <p>Toca cualquier recuerdo para abrirlo 💌</p>
+
+        <div class="botones-recuerdos">
+          <button class="boton-recuerdo" onclick="irA('recuerdo1')">
+            cuando nos conocimos <span>🌸</span>
+          </button>
+
+          <button class="boton-recuerdo" onclick="irA('recuerdo2')">
+            Un día que me hizo muy feliz <span>💖</span>
+          </button>
+
+          <button class="boton-recuerdo" onclick="irA('recuerdo3')">
+            Nuestras risas juntos <span>✨</span>
+          </button>
+
+          <button class="boton-recuerdo" onclick="irA('recuerdo4')">
+            Lo que mas gusta de ti <span>🎀</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="tarjeta">
+        <h2>Un mensaje para ti</h2>
+        <p>
+          Gracias por estar en mi vida y por hacerla mucho más bonita.
+          Te amo muchísimo con todo mi coyashon y mi alma porque el alma nunca muere y deseo que este nuevo año esté lleno de sueños cumplidos.
+        </p>
+
+        <button class="boton-mensaje" onclick="mostrarMensaje()">
+          Abrir mi mensaje 💌
+        </button>
+
+        <div class="mensaje-secreto" id="mensaje">
+          Feliz cumpleaños, mi amor. Eres una persona increíble muy especial y sobre todo muy proo y me siento muy afortunado
+          de tenerte en mi vida. Espero que hoy sonrías mucho, que recibas todo el amor
+          que mereces y que este año te traiga cosas hermosas. Te amo muchísimo. 🎀💖
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>🎂 🎀 🌸</div>
+      <p>De: santirata, Hecho con mucho amor 💗</p>
+    </footer>
+  </div>
+
+  <!-- RECUERDO 1 -->
+  <div id="recuerdo1" class="pantalla">
+    <main>
+      <button class="boton-volver" onclick="volverInicio()">← Volver</button>
+
+      <section class="tarjeta">
+        <div class="recuerdo-grande">🌸</div>
+        <h2>Nuestro primer encuentro</h2>
+        <p>
+         Primero que nada kiero dar gracias a la vida y al universo de haberte conocidol, conocido fue el mejor momento de mi vida porque conoci al amor de mi vida que eres tu y siempre seras tu.Cuando hablamos en chat por primera vez siempre soñe que fueramos novios asi bien pro y como quien dice mi sueño se cumplio, cuando te vi por primera ves dije wow esta mas wapa en persona, volviendo al inicio de vdd doy muchas gracias de averte conocido amor❤️
+        </p>
+        <div class="corazones">💗 🌸 💗</div>
+     <img src="san.jpg" alt="Foto bonita" class="foto-recuerdo">
+     <style> .foto-recuerdo {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 18px;
+  border: 4px solid #ff8fb8;
+  box-shadow: 0 8px 18px rgba(214, 51, 108, .25);
+}
+</style>
+  
+    </main>
+  </div>
+
+  <!-- RECUERDO 2 -->
+  <div id="recuerdo2" class="pantalla">
+    <main>
+      <button class="boton-volver" onclick="volverInicio()">← Volver</button>
+
+      <section class="tarjeta">
+        <div class="recuerdo-grande">💖</div>
+        <h2>Un día que me hizo muy feliz</h2>
+        <p>
+         Vamos a contar aqui nuestra primera deit en nuestra primera deit estaba muy nervioso de que no te gustara algo o nose JAJAJA entonces estaba muy pero muy nervioso tambien vamos a recordar cuando nos dimos nuestro primer beso que te lo robe mas que nada ese dia me fui muy feliz a mi casa JAJAJA emm si y luego todos los momentos felices que emos echo y los que faltaaaan JAJAJA si porque tu y yo vamos a esatr toda la vida
+        </p>
+        <div class="corazones">💖 ✨ 💖</div>
+      </section>
+    </main>
+  </div>
+
+  <!-- RECUERDO 3 -->
+  <div id="recuerdo3" class="pantalla">
+    <main>
+      <button class="boton-volver" onclick="volverInicio()">← Volver</button>
+
+      <section class="tarjeta">
+        <div class="recuerdo-grande">✨</div>
+        <h2>Nuestras risas juntos</h2>
+        <p>
+         Aqui vamos a contar todas laveces que te hago reir porque como dicen por ahi berbo mata carita asi que mi plan siempre fue hacerte reir y solo te gustare JAJAJAJ y vaya que si funciono
+        </p>
+        <div class="corazones">😂 💗 😂</div>
+      </section>
+    </main>
+  </div>
+
+  <!-- RECUERDO 4 -->
+  <div id="recuerdo4" class="pantalla">
+    <main>
+      <button class="boton-volver" onclick="volverInicio()">← Volver</button>
+
+      <section class="tarjeta">
+        <div class="recuerdo-grande">🎀</div>
+        <h2>Lo que mas me gusta de ti</h2>
+        <p>
+         lo que mas me gusta de ti es todo pero lo repasaremos primero que nada tu sonrisa emocha y tan linda que tienes porque si si eres muy risueña y eso me gusta otra cosa tus cachetitos porque los lleno de besos y cariñitos jejejeje otra cosa es tus ojos porque con ellos me ves osea vez al amor de tu vida yo jejeje otra cosa es toda tu carita perfedcta que tienes y tan emocha bella linda preciosa QUE ERES AMOOOOOOORR COMO TE AMMOOOOO y me encantas demasiadoooooooo JEJEJEJ
+        </p>
+        <div class="corazones">🎀 💗 🎀</div>
+      </section>
+    </main>
+  </div>
+
+<script>
+  function irA(id) {
+    document.querySelectorAll(".pantalla").forEach(pantalla => {
+      pantalla.classList.remove("activa");
+    });
+
+    document.getElementById(id).classList.add("activa");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function volverInicio() {
+    irA("inicio");
+  }
+
+  function mostrarMensaje() {
+    const mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "block";
+    mensaje.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+</script>
+
+</body>
+</html>
